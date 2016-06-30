@@ -25,8 +25,8 @@ import javax.swing.JTextField;
 public class Mail extends JPanel{
 
     // login info
-    final String username = "iamthemailbot@gmail.com";
-    final String password = "mailbotcabbage";
+    final String username = "email-goes-here@gmail.com";
+    final String password = "password-goes-here";
 
     // email related
     private Properties props;
