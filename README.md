@@ -5,8 +5,8 @@ LEA is being developed in the following environments:
  - IntelliJ IDE
  - JDK version 8 update 92
  
-<hr>Changelogs</hr>
-Update: Prototype 2
+<hr>Changelogs</br>
+Update: PROTOTYPE 2
 - LEA was rebuilt using the MVC design pattern.
 - A Login form was added.
 
