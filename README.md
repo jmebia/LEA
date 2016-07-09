@@ -1,12 +1,18 @@
 # LEA
-A light-weight email application that uses Gmail's API, JavaMail API.
+A WIP light-weight email application that uses Gmail's API, JavaMail API.
 
 LEA is being developed in the following environments:
  - IntelliJ IDE
  - JDK version 8 update 92
- 
+<hr>
+Upcoming(planned) features:
+- ability to send attachments
+- invalid/error authentication handling
+- OAuth2 implementation
+
 <hr>Changelogs</br>
-Update: PROTOTYPE 2
+PROTOTYPE 2
+- (LATEST) Fixed UI
 - LEA was rebuilt using the MVC design pattern.
 - A Login form was added.
 
