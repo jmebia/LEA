@@ -16,7 +16,7 @@ public class LoginView extends JFrame{
 
     // constructor
     public LoginView(){
-        this.setTitle("com.project.lea.LEA || Gmail Login");
+        this.setTitle("LEA | Gmail Login");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setPreferredSize(new Dimension(600, 300));
         this.setResizable(false);
@@ -65,7 +65,7 @@ public class LoginView extends JFrame{
         return passPassword.getPassword();
     }
 
-    // login button action listener
+    // action listener for login button
     void addLoginButtonListener(ActionListener loginButtonListener){
         btnLogin.addActionListener(loginButtonListener);
     }

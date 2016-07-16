@@ -1,5 +1,4 @@
 package com.project.lea;
-
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -30,11 +29,19 @@ public class Controller {
         // methods from model
 
         public void actionPerformed(ActionEvent e) {
-            model.userLogin(loginView.getUserText(), loginView.getPassword());
-            model.startSession();
-            JOptionPane.showMessageDialog(null, "Login Successful!");
-            loginView.dispose();
-            mainView.setVisible(true);
+            if (model.userLogin(loginView.getUserText(), loginView.getPassword()) == true) {
+                if (model.startSession()==true) {
+                    JOptionPane.showMessageDialog(null, "Login Successful!");
+                    loginView.dispose();
+                    mainView.setVisible(true);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Invalid login credentials");
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Please use a valid email(*@gmail.com) address");
+            }
         }
     }
 
@@ -47,9 +54,12 @@ public class Controller {
         // methods from model
 
         public void actionPerformed(ActionEvent e) {
-            model.sendMessage(mainView.getRecipient(), mainView.getSubject(), mainView.getMessage());
-            JOptionPane.showMessageDialog(null, "Email Sent!");
-            mainView.clearMessage();
+            if(model.sendMessage(mainView.getRecipient(), mainView.getSubject(), mainView.getMessage())==true){
+                JOptionPane.showMessageDialog(null, "Email Sent!");
+                mainView.clearMessage();
+            }else{
+                JOptionPane.showMessageDialog(null, "On of the fields is invalid");
+            }
         }
     }
 }

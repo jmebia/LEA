@@ -17,7 +17,7 @@ public class MainView extends JFrame {
 
     // constructor
     public MainView(){
-        this.setTitle("com.project.lea.LEA || Lightweight Email Application || Powered by Gmail");
+        this.setTitle("LEA | Lightweight Email Application || Powered by Gmail");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setPreferredSize(new Dimension(650,500));
         this.setResizable(false);
@@ -33,10 +33,13 @@ public class MainView extends JFrame {
         btnSend.setPreferredSize(new Dimension(100, 60));
         btnSend.setText("Send");
 
+        //PromptSupport.setPrompt("recipient@gmail.com", txtRecipient);
+
         // GridBagLayout implemented
         panelMain.setLayout(new GridBagLayout());
         GridBagConstraints con = new GridBagConstraints();
 
+        // arranges components with GridBagLayout
         con.gridx = 0;
         con.gridy = 0;
         panelMain.add(new Label("Send To:"), con);
@@ -74,7 +77,7 @@ public class MainView extends JFrame {
         return txtMessage.getText();
     }
 
-    // send button action listener
+    // action listener for send button
     void addSendButtonListener(ActionListener sendButtonListener){
         btnSend.addActionListener(sendButtonListener);
     }

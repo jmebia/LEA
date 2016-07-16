@@ -2,8 +2,11 @@ package com.project.lea; /**
  * All the logic stuff goes here
  */
 
+import com.sun.javaws.exceptions.MissingFieldException;
+
 import java.util.Properties;
 import javax.mail.*;
+import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
@@ -17,7 +20,9 @@ public class Model {
     Session session;
 
     // starts the session
-    public void startSession(){
+    public boolean startSession(){
+        boolean retAuth = true;
+        Transport transport;
         properties = new Properties();
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
@@ -29,11 +34,27 @@ public class Model {
                 return new PasswordAuthentication(username, password);
             }
         });
+        try {
+            transport = session.getTransport("smtp");
+            transport.connect("smtp.gmail.com", username, password);
+            transport.close();
+            //Authentication success
+        } catch (AuthenticationFailedException e) {
+            //Authentication failed. Handle this here.
+            System.out.println("Authentication Exception");
+            retAuth = false;
+        } catch (MessagingException me){
+
+        }
+        return retAuth;
     }
 
     // allows user to send his email
-    public int sendMessage(String recipient, String subject, String msg){
+    public boolean sendMessage(String recipient, String subject, String msg){
+        boolean check = false;
         try {
+            InternetAddress emailAdd = new InternetAddress(recipient);
+            emailAdd.validate();
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
             message.setRecipients(Message.RecipientType.TO,
@@ -41,18 +62,24 @@ public class Model {
             message.setSubject(subject);
             message.setText(msg);
             Transport.send(message);
-        }catch(MessagingException me){
+            check = true;
+        }catch(MessagingException me) {
             System.out.println(me.getMessage());
-            return 1;
         }
-        return 0;
+        return check;
     }
 
     // login
-    public void userLogin(String username, char[] password){
-        this.username = username;
-        // converts char array to string
-        this.password = new String(password);
+    public boolean userLogin(String username, char[] password){
+        boolean check = true;
+        if(username.contains("@gmail.com")) {
+            this.username = username;
+            // converts char array to string
+            this.password = new String(password);
+        }
+        else
+            check = false;
+        return check;
     }
 
 }
