@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LEA.iml" filepath="$PROJECT_DIR$/LEA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lea.iml" filepath="$PROJECT_DIR$/lea.iml" />
     </modules>
   </component>
 </project>

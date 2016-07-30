@@ -1,3 +1,5 @@
+package com.github.LEA;
+
 import javax.mail.MessagingException;
 import javax.swing.*;
 import java.awt.event.ActionListener;
@@ -30,10 +32,13 @@ public class Controller {
 
         public void actionPerformed(ActionEvent e){
             model.userLogin(loginView.getUserText(), loginView.getPassword());
-            model.startSession();
-            JOptionPane.showMessageDialog(null, "Login Successful!");
-            loginView.dispose();
-            mainView.setVisible(true);
+            if(model.startSession()) {
+                JOptionPane.showMessageDialog(null, "Login Successful!");
+                loginView.dispose();
+                mainView.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "Login Failed!");
+            }
         }
     }
 

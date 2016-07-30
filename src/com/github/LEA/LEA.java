@@ -1,6 +1,5 @@
-/**
- * Created by jmebia on 09/07/2016.
- */
+package com.github.LEA;
+
 public class LEA {
 
     public static void main(String[] args){
