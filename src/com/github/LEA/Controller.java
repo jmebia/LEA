@@ -50,11 +50,11 @@ public class Controller {
         // methods from model
 
         public void actionPerformed(ActionEvent e){
-            try {
-                model.sendMessage(mainView.getRecipient(), mainView.getSubject(), mainView.getMessage());
-            } catch (MessagingException me) {
-                me.printStackTrace();
-            }
+            // sample addFile function
+            // the file source path here is from my pc, you'll need to use your own
+            // model.addFile("SampleFile","C:\\Users\\jmebia\\Desktop\\Sample.txt");
+
+            model.sendMessage(mainView.getRecipient(), mainView.getSubject(), mainView.getMessage());
             JOptionPane.showMessageDialog(null, "Email Sent!");
             mainView.clearMessage();
         }

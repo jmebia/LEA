@@ -29,12 +29,12 @@ public class MainView extends JFrame {
 
 
         // swing component set up
-        txtRecipient.setPreferredSize(new Dimension(300, txtRecipient.getPreferredSize().height));
-        txtSubject.setPreferredSize(new Dimension(300, txtSubject.getPreferredSize().height));
+        txtRecipient.setPreferredSize(new Dimension(400, txtRecipient.getPreferredSize().height));
+        txtSubject.setPreferredSize(new Dimension(400, txtSubject.getPreferredSize().height));
         scrollPane = new JScrollPane(txtMessage);
-        scrollPane.setPreferredSize(new Dimension(300, 200));
+        scrollPane.setPreferredSize(new Dimension(400, 200));
         txtMessage.setLineWrap(true);
-        btnSend.setPreferredSize(new Dimension(100, 50));
+        btnSend.setPreferredSize(new Dimension(85, 50));
         btnSend.setText("Send");
 
         // GridBagLayout
