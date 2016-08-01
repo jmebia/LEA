@@ -64,14 +64,9 @@ public class Controller {
     class AttachmentButtonListener implements ActionListener{
 
         public void actionPerformed(ActionEvent e){
-            try{
-                FileChooser chooser = new FileChooser();
-                String absPath = chooser.chooseFile();
-                model.addFile("File", absPath);
-                System.out.println("Attachment Added");
-            } catch (Exception ex){
-                System.out.println("Attachment Adding Failed");
-            }
+            FileChooser chooser = new FileChooser();
+            String absPath = chooser.chooseFile();
+            model.addFile("File", absPath);
 
         }
     }
