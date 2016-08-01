@@ -8,7 +8,7 @@ LEA is being developed in the following environments:
  - JDK version 8 update 92
  
 <hr>
-# Changelogs</br>
+<h2>Changelogs</h2></br>
 Prototype v3.1 [-- LATEST --]
 - File Chooser - file chooser added for addidng attachments. No proper UI, yet.
 
