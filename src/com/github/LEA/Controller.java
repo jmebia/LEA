@@ -1,9 +1,9 @@
 package com.github.LEA;
 
-import javax.mail.MessagingException;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.File;
 
 /**
  * The main communication between the Model and LoginView
@@ -21,6 +21,7 @@ public class Controller {
 
         this.loginView.addLoginButtonListener(new LoginButtonListener());
         this.mainView.addSendButtonListener(new SendButtonListener());
+        this.mainView.addAttachmentButtonListener((new AttachmentButtonListener()));
     }
 
     // login button listener
@@ -57,6 +58,21 @@ public class Controller {
             model.sendMessage(mainView.getRecipient(), mainView.getSubject(), mainView.getMessage());
             JOptionPane.showMessageDialog(null, "Email Sent!");
             mainView.clearMessage();
+        }
+    }
+
+    class AttachmentButtonListener implements ActionListener{
+
+        public void actionPerformed(ActionEvent e){
+            try{
+                FileChooser chooser = new FileChooser();
+                String absPath = chooser.chooseFile();
+                model.addFile("File", absPath);
+                System.out.println("Attachment Added");
+            } catch (Exception ex){
+                System.out.println("Attachment Adding Failed");
+            }
+
         }
     }
 

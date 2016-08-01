@@ -1,7 +1,5 @@
 package com.github.LEA;
 
-import javafx.geometry.VerticalDirection;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -14,6 +12,7 @@ public class MainView extends JFrame {
     private JTextField txtSubject = new JTextField();
     private JTextArea txtMessage = new JTextArea();
     private JButton btnSend = new JButton();
+    private JButton btnAttachment = new JButton();
 
     private JScrollPane scrollPane;
     // constructor
@@ -36,6 +35,8 @@ public class MainView extends JFrame {
         txtMessage.setLineWrap(true);
         btnSend.setPreferredSize(new Dimension(85, 50));
         btnSend.setText("Send");
+        btnAttachment.setPreferredSize(new Dimension(75, 35));
+        btnAttachment.setText("Add Attachment");
 
         // GridBagLayout
         panelMain.setLayout(new GridBagLayout());
@@ -55,8 +56,11 @@ public class MainView extends JFrame {
         gc.gridy++;
         gc.insets = new Insets(10,0,0,0);
         panelMain.add(scrollPane, gc);
-        gc.gridy++;
         gc.anchor = GridBagConstraints.CENTER;
+        gc.gridy++;
+        panelMain.add(btnAttachment, gc);
+        gc.gridx++;
+        gc.anchor = GridBagConstraints.LINE_END;
         panelMain.add(btnSend, gc);
         this.add(panelMain);
         this.pack();
@@ -79,6 +83,11 @@ public class MainView extends JFrame {
     // send button action listener
     void addSendButtonListener(ActionListener sendButtonListener){
         btnSend.addActionListener(sendButtonListener);
+    }
+
+    // attachment button action listener
+    void addAttachmentButtonListener(ActionListener attachButtonListener){
+        btnAttachment.addActionListener(attachButtonListener);
     }
 
     // cleaner
