@@ -7,8 +7,9 @@ LEA is being developed in the following environments:
  - IntelliJ IDEA 2016.2 (I.D.E.)
  - JDK version 8 update 92
  
-<hr>Changelogs</br>
-Prototype v3.1
+<hr>
+# Changelogs</br>
+Prototype v3.1 [-- LATEST --]
 - File Chooser - file chooser added for addidng attachments. No proper UI, yet.
 
 Prototype v3
@@ -25,6 +26,6 @@ Prototype v2
 - Rebuilt - LEA was rebuilt using the MVC design pattern.
 - Login form - a Login form was added.
 
-Prototype:
+Prototype
 - Text only - can send email messages.
 - No login form - login credentials is put in the source code.
