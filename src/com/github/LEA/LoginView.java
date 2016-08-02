@@ -17,6 +17,7 @@ public class LoginView extends JFrame{
         this.setTitle("LEA | Lightweight Email Application");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setPreferredSize(new Dimension(400, 500));
+        this.setResizable(false);
     }
 
     // initializes the components for the login form

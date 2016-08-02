@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 public class MainView extends JFrame {
 
     // LEA main components instantiation
-    private JPanel panelMain = new JPanel();
+    private JPanel panelMain = new JPanel(); // panel for messaging area
     private JTextField txtRecipient = new JTextField();
     private JTextField txtSubject = new JTextField();
     private JTextArea txtMessage = new JTextArea();
@@ -20,12 +20,11 @@ public class MainView extends JFrame {
         this.setTitle("LEA | Lightweight Email Application");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setPreferredSize(new Dimension(600,500));
+        this.setResizable(false);
     }
 
     // initializes the components for the main app
     public void initMainComponents(){
-
-
 
         // swing component set up
         txtRecipient.setPreferredSize(new Dimension(400, txtRecipient.getPreferredSize().height));
@@ -35,8 +34,8 @@ public class MainView extends JFrame {
         txtMessage.setLineWrap(true);
         btnSend.setPreferredSize(new Dimension(85, 50));
         btnSend.setText("Send");
-        btnAttachment.setPreferredSize(new Dimension(75, 35));
-        btnAttachment.setText("Add Attachment");
+        btnAttachment.setPreferredSize(new Dimension(150, 35));
+        btnAttachment.setText("Add Attachment...");
 
         // GridBagLayout
         panelMain.setLayout(new GridBagLayout());
@@ -56,10 +55,8 @@ public class MainView extends JFrame {
         gc.gridy++;
         gc.insets = new Insets(10,0,0,0);
         panelMain.add(scrollPane, gc);
-        gc.anchor = GridBagConstraints.CENTER;
         gc.gridy++;
         panelMain.add(btnAttachment, gc);
-        gc.gridx++;
         gc.anchor = GridBagConstraints.LINE_END;
         panelMain.add(btnSend, gc);
         this.add(panelMain);

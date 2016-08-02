@@ -19,6 +19,7 @@ public class FileChooser {
 
         // instantiates the components
         btnOpen = new JButton(); // button that will serve as file opener/getter
+        btnOpen.setText("Save");
         fileChooser = new JFileChooser(); // the file chooser
 
         // this is the current/default directory you'll be in when you open fileChooser
