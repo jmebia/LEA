@@ -1,4 +1,4 @@
-# LEA [Prototype version 3 update 1]
+# LEA
 A light-weight email application that uses JavaMail API.
 
 Important: You should turn-on the "Access for less secure apps" at https://www.google.com/settings/security/lesssecureapps to be able to use this app. OAuth 2.0 is still not implemented for this project.
@@ -9,7 +9,7 @@ LEA is being developed in the following environments:
  
 <hr>
 <h2>Changelogs</h2></br>
-Prototype v3.1 [-- LATEST --]
+Prototype v3.1 | LATEST UPDATE
 - File Chooser - file chooser added for addidng attachments. No proper UI, yet.
 
 Prototype v3
