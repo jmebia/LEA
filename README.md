@@ -1,7 +1,7 @@
 # LEA [Prototype version 3 update 1]
 A light-weight email application that uses JavaMail API.
 
-Important: You should turn-on the "Access for less secure apps" at https://www.google.com/settings/security/lesssecureapps to be able to use this app. OAuth 2.0 implementation for this project is still WIP.
+Important: You should turn-on the "Access for less secure apps" at https://www.google.com/settings/security/lesssecureapps to be able to use this app. OAuth 2.0 is still not implemented for this project.
 
 LEA is being developed in the following environments:
  - IntelliJ IDEA 2016.2 (I.D.E.)
