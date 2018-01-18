@@ -14,10 +14,10 @@ Prototype v3.1 | LATEST UPDATE
 
 Prototype v3
 - Attachments - added sending of attachments. No file chooser, yet. 
-- UI - tweaked the UI a little bit.
+- UI - tweaked the UI.
 
 Prototype v2.2
-- Login Checker - fixed an issue where a user will be "logged in" the app even thought he entered invalid login credentials.
+- Login Checker - fixed an issue where a user will be "logged in" the app even though he entered invalid login credentials.
 
 Prototype v2.1
 - Fixed UI.
